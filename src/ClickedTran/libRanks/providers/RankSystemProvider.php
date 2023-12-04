@@ -38,6 +38,10 @@ class RankSystemProvider extends RankProvider
         return $user->setRank($this->ranks->getRankManager()->getRank($rank));
    
        });
- 
+    }
+    
+    public function getRankData(string $rank, ?callable $callback = null)
+    {
+      return $this->ranks->getRankManager()->getRank($rank);
     }
 }
