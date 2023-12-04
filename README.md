@@ -59,6 +59,15 @@ class ExamplePlugin extends PluginBase{
 }
 ```
 
+If you usage `poggit` to build your repo, you can add it to `.poggit.yml` file
+```php
+projects:
+ YourPlugin:
+  libs:
+   - src: ClickedTran/libRanks/libRanks
+     version: ^1.0.0
+```
+
 ## NOTE
 - If you find this lib similar to a certain lib, then you are right, I made this lib based on <a href="https://github.com/DaPigGuy/libPiggyEconomy">DaPigGuy's libPiggyEconomy</a>
 - Thank for you reading note
