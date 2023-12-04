@@ -27,8 +27,9 @@ libRanks::getProvider($providerInformation)
 
 | Method                                                                                            | Description                | Callback Signature                                   | Callback Description                                                      |
 |---------------------------------------------------------------------------------------------------|----------------------------|------------------------------------------------------|---------------------------------------------------------------------------|
-| ```RankProvider::getRank(Player $player, ?callable $callback = null)```                                                  | Returns symbol of currency | `none`                                               | `none`                                                                    |
-| ```RankProvider::giveRank(Player $player, string $rank, ?callable $callback = null)``` | Give rank to a player     | `none`                    | Returns true if money was given successfully, otherwise false.            |
+| ```RankProvider::getRank(Player $player, ?callable $callback = null)```                                                  | Returns | `none`                                               | `none`                                                                    |
+| ```RankProvider::giveRank(Player $player, string $rank, ?callable $callback = null)``` | Give rank to a player     | `none`                    | `none`           |
+| ```RankProvider::getRankData(string $rank, ?callable $callback = null)``` | Check if rank exists or not | `none` | `none`
 ### Error Handling
 
 There are several exceptions that can be thrown that you may want to handle in your plugin:
