@@ -22,7 +22,7 @@ class PurePermsProvider extends RankProvider
         $this->ranks = PurePerms::getInstance();
     }
 
-    public function getRank(Player $player)
+    public function getRank(Player $player, ?callable $callback = null)
     {
         return $this->ranks->getUserDataMgr()->getData($player)["group"];
     }
