@@ -1,0 +1,5 @@
+name: libRanks
+version: 1.0.0
+antigen: ClickedTran\libRanks
+api: 5.0.0
+author: ClickedTran
