@@ -29,14 +29,11 @@ class PurePermsProvider extends RankProvider
 
     public function giveRank(Player $player, string $rank, ?callable $callback = null)
     {
-        if(!isset($this->ranks->getProvider()->getGroupsData()[$rank])){
-           Server::getInstance()->getLogger()->error("Rank $rank not found in PurePerms!");
-          return;
-        }
-        if(!$this->ranks->isValidGroupName($rank)){
-          Server::getInstance()->getLogger()->error("Rank $rank not valid!");
-          return;
-        }
-        return $this->ranks->setGroup($player, $this->ranks->getGroup($rank));
+      return $this->ranks->setGroup($player, $this->ranks->getGroup($rank));
+    }
+    
+    public function getRankData(string $rank, ?callable $callback = null)
+    {   
+      return $this->ranks->getGroup($rank);
     }
 }
