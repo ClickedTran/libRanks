@@ -25,7 +25,7 @@ class RankSystemProvider extends RankProvider
     }
 
 
-    public function getRank(Player $player)
+    public function getRank(Player $player, ?callable $callback = null)
     {
       $session = $this->ranks->getSessionManager()->get($player);
       return Utils::ranks2string($session->getRanks());
