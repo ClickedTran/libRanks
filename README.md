@@ -1,39 +1,34 @@
-# libPiggyEconomy
+# libRanks
 
-libPiggyEconomy is a virion for easy support of multiple economy providers.
+libRanks is a virion for easy support of multiple rank providers.
 
 ## Supported Providers
 
-- [EconomyAPI](https://poggit.pmmp.io/p/EconomyAPI) by onebone/poggit-orphanage
-- [BedrockEconomy](https://poggit.pmmp.io/p/BedrockEconomy) by cooldogedev
-- Experience (PMMP)
+- [PurePerms](https://poggit.pmmp.io/p/PurePerms) by #64FF00/poggit-orphanage
+- [RankSystem](https://poggit.pmmp.io/p/RankSystem) by IvanCraft623
 
 ## Usage
 
 ### Setup
 
 ```php
-libPiggyEconomy::init()
+libRanks::init()
 ```
 
-### Using Economy Providers
+### Using Ranks Providers
 
 ```php
-libPiggyEconomy::getProvider($providerInformation)
+libRanks::getProvider($providerInformation)
 ```
 
 `$providerInformation` is an array with the key ```provider```.
 
-#### Economy Provider Methods
+#### Rank Provider Methods
 
 | Method                                                                                            | Description                | Callback Signature                                   | Callback Description                                                      |
 |---------------------------------------------------------------------------------------------------|----------------------------|------------------------------------------------------|---------------------------------------------------------------------------|
-| ```EconomyProvider::getMonetaryUnit(): string```                                                  | Returns symbol of currency | `none`                                               | `none`                                                                    |
-| ```EconomyProvider::getMoney(Player $player, callable $callback): void```                         | Get balance of a player    | <code>function(float&#124;int $amount) void{}</code> | Returns default balance if player wasn't found, float&#124;int otherwise. |
-| ```EconomyProvider::giveMoney(Player $player, float $amount, ?callable $callback = null): void``` | Give money to a player     | `function(bool $success): void{}`                    | Returns true if money was given successfully, otherwise false.            |
-| ```EconomyProvider::takeMoney(Player $player, float $amount, ?callable $callback = null): void``` | Take money from a player   | `function(bool $success): void{}`                    | Returns true if money was taken successfully, otherwise false.            |
-| ```EconomyProvider::setMoney(Player $player, float $amount, ?callable $callback = null): void```  | Set balance of a player    | `function(bool $success): void{}`                    | Returns true if money was set successfully, otherwise false.              |
-
+| ```RankProvider::getRank(Player $player, ?callable $callback = null)```                                                  | Returns symbol of currency | `none`                                               | `none`                                                                    |
+| ```EconomyProvider::giveRank(Player $player, string $rank, ?callable $callback = null)``` | Give rank to a player     | `none`                    | Returns true if money was given successfully, otherwise false.            |
 ### Error Handling
 
 There are several exceptions that can be thrown that you may want to handle in your plugin:
@@ -46,20 +41,20 @@ There are several exceptions that can be thrown that you may want to handle in y
 config.yml
 
 ```yaml
-economy:
-  provider: bedrockeconomy
+rank:
+  provider: ranksystem
 ```
 
-AmazingPlugin.php
+ExamplePlugin.php
 
 ```php
-class AmazingPlugin extends PluginBase{
-    public $economyProvider;
+class ExamplePlugin extends PluginBase{
+    public $rankProvider;
     
     public function onEnable(): void{
         $this->saveDefaultConfig();
-        libPiggyEconomy::init();
-        $this->economyProvider = libPiggyEconomy::getProvider($this->getConfig()->get("economy"));
+        libRanks::init();
+        $this->rankProvider = libRanks::getProvider($this->getConfig()->get("rank"));
     }
 }
 ```
