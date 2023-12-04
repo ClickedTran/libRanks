@@ -1,0 +1,9 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Clickedtran/libRanks
+build-by-default: true
+branches:
+- Master
+projects:
+  libRanks:
+    model: virion
+    type: library
+...
