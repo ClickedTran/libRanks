@@ -15,4 +15,7 @@ abstract class RankProvider
     abstract function getRank(Player $player, ?callable $callback = null);
 
     abstract function giveRank(Player $player, string $rank, ?callable $callback = null);
+    
+    abstract function getRankData(string $rank, ?callable $callback = null);
+   
 }
