@@ -36,4 +36,9 @@ class PurePermsProvider extends RankProvider
     {   
       return $this->ranks->getGroup($rank);
     }
+
+    public function removeRank(Player $player, string $rank, ?callable $callback = null)
+    {
+        return;
+    }
 }
