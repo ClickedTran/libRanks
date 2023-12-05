@@ -29,7 +29,8 @@ libRanks::getProvider($providerInformation)
 |---------------------------------------------------------------------------------------------------|----------------------------|------------------------------------------------------|---------------------------------------------------------------------------|
 | ```RankProvider::getRank(Player $player, ?callable $callback = null)```                                                  | Returns | `none`                                               | `none`                                                                    |
 | ```RankProvider::giveRank(Player $player, string $rank, ?callable $callback = null)``` | Give rank to a player     | `none`                    | `none`           |
-| ```RankProvider::getRankData(string $rank, ?callable $callback = null)``` | Check if rank exists or not | `none` | `none`
+| ```RankProvider::getRankData(string $rank, ?callable $callback = null)``` | Check if rank exists or not | `none` | `none` |
+| ```RankProvider::removeRank(Player $player, string $rank, ?callable $callback = null)``` | Remove rank from a player | `none` | `none`
 ### Error Handling
 
 There are several exceptions that can be thrown that you may want to handle in your plugin:
