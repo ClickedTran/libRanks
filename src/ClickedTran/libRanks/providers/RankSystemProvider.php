@@ -44,4 +44,12 @@ class RankSystemProvider extends RankProvider
     {
       return $this->ranks->getRankManager()->getRank($rank);
     }
+
+    public function removeRank(Player $player, string $rank, ?callable $callback = null)
+    {
+      $user = $this->ranks->getSessionManager()->get($player);
+      $user->onInitialize(function() use ($user, $rank){
+      return $user->removeRank($this->getRankData($rank));
+      });
+    }
 }
