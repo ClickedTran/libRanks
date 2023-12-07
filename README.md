@@ -23,14 +23,26 @@ libRanks::getProvider($providerInformation)
 
 `$providerInformation` is an array with the key ```provider```.
 
-#### Rank Provider Methods
+### Give Rank To Player
+```php
+RankProvider::giveRank(Player $player, string $rank, ?callable $callback = null)
+```
 
-| Method                                                                                            | Description                | Callback Signature                                   | Callback Description                                                      |
-|---------------------------------------------------------------------------------------------------|----------------------------|------------------------------------------------------|---------------------------------------------------------------------------|
-| ```RankProvider::getRank(Player $player, ?callable $callback = null)```                                                  | Returns | `none`                                               | `none`                                                                    |
-| ```RankProvider::giveRank(Player $player, string $rank, ?callable $callback = null)``` | Give rank to a player     | `none`                    | `none`           |
-| ```RankProvider::getRankData(string $rank, ?callable $callback = null)``` | Check if rank exists or not | `none` | `none` |
-| ```RankProvider::removeRank(Player $player, string $rank, ?callable $callback = null)``` | Remove rank from a player | `none` | `none`
+### Get Rank From Player
+```php
+RankProvider::getRank(Player $player, ?callable $callback = null)
+```
+
+### Remove Player's Rank
+```php
+RankProvider::removeRank(Player $player, string $rank, ?callable $callback = null)
+```
+
+### Get Rank In Data
+```php
+RankProvider::getRankData(string $rank, ?callable $callback = null)
+```
+
 ### Error Handling
 
 There are several exceptions that can be thrown that you may want to handle in your plugin:
