@@ -22,12 +22,12 @@ class PurePermsProvider extends RankProvider
         $this->ranks = PurePerms::getInstance();
     }
 
-    public function getRank(Player $player, ?callable $callback = null)
+    public function getRank(Player |string $player, ?callable $callback = null)
     {
         return $this->ranks->getUserDataMgr()->getData($player)["group"];
     }
 
-    public function giveRank(Player $player, string $rank, ?callable $callback = null)
+    public function giveRank(Player|string $player, string $rank, ?callable $callback = null)
     {
       return $this->ranks->setGroup($player, $this->ranks->getGroup($rank));
     }
@@ -36,9 +36,24 @@ class PurePermsProvider extends RankProvider
     {   
       return $this->ranks->getGroup($rank);
     }
-
-    public function removeRank(Player $player, string $rank, ?callable $callback = null)
+    
+    public function removeRank(Player|string $player, string $rank, ?callable $callback = null)
     {
-        return;
+        return; //PUREPERMS NO REMOVE RANK OF PLAYER OR I DON'T KNOW :)
+    }
+    
+    public function getPlayerPermission(Player|string $player, ?callable $callback = null)
+    {
+        return $this->ranks->getUserDataMgr()->getUserPermissions($player);
+    }
+    
+    public function setPlayerPermission(Player|string $player, string $permission, ?callable $callback = null)
+    {
+        return $this->ranks->getUserDataMgr()->setPermission($player, $permission);
+    }
+    
+    public function unsetPlayerPermission(Player|string $player, string $permission, ?callable $callback = null)
+    {
+       return $this->ranks->getUserDataMgr()->unsetPermission($player, $permission); 
     }
 }
