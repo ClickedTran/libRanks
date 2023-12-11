@@ -25,17 +25,17 @@ libRanks::getProvider($providerInformation)
 
 ### Give Rank To Player
 ```php
-RankProvider::giveRank(Player $player, string $rank, ?callable $callback = null)
+RankProvider::giveRank(Player|string $player, string $rank, ?callable $callback = null)
 ```
 
 ### Get Rank From Player
 ```php
-RankProvider::getRank(Player $player, ?callable $callback = null)
+RankProvider::getRank(Player|string $player, ?callable $callback = null)
 ```
 
 ### Remove Player's Rank
 ```php
-RankProvider::removeRank(Player $player, string $rank, ?callable $callback = null)
+RankProvider::removeRank(Player|string $player, string $rank, ?callable $callback = null)
 ```
 
 ### Get Rank In Data
