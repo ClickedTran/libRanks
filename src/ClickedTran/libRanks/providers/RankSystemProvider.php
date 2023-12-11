@@ -25,31 +25,55 @@ class RankSystemProvider extends RankProvider
     }
 
 
-    public function getRank(Player $player, ?callable $callback = null)
+    public function getRank(Player|string $player, ?callable $callback = null)
     {
       $session = $this->ranks->getSessionManager()->get($player);
       return Utils::ranks2string($session->getRanks());
     }
 
-    public function giveRank(Player $player, string $rank, ?callable $callback = null)
+    public function giveRank(Player|string $player, string $rank, ?callable $callback = null)
     {
        $user = $this->ranks->getSessionManager()->get($player);
-        $user->onInitialize(function() use ($user, $rank){
-        return $user->setRank($this->ranks->getRankManager()->getRank($rank));
-   
+       $user->onInitialize(function() use ($user, $rank){
+          return $user->setRank($this->ranks->getRankManager()->getRank($rank));   
        });
+ 
     }
     
     public function getRankData(string $rank, ?callable $callback = null)
     {
       return $this->ranks->getRankManager()->getRank($rank);
     }
-
-    public function removeRank(Player $player, string $rank, ?callable $callback = null)
+    
+    public function removeRank(Player|string $player, string $rank, ?callable $callback = null)
     {
-      $user = $this->ranks->getSessionManager()->get($player);
-      $user->onInitialize(function() use ($user, $rank){
-      return $user->removeRank($this->getRankData($rank));
-      });
+       $user = $this->ranks->getSessionManager()->get($player);
+       $user->onInitialize(function() use ($user, $rank){
+          return $user->removeRank($this->getRankData($rank));
+       });
+    }
+    
+    public function getPlayerPermission(Player|string $player, ?callable $callback = null)
+    {
+        $user = $this->ranks->getSessionManager()->get($player);
+       $user->onInitialize(function() use ($user){
+          return $user->getUserPermissions();
+       });
+    }
+    
+    public function setPlayerPermission(Player|string $player, string $permission, ?callable $callback = null)
+    {
+        $user = $this->ranks->getSessionManager()->get($player);
+       $user->onInitialize(function() use ($user, $permission){
+          return $user->setPermission($permission);
+       });
+    }
+    
+    public function unsetPlayerPermission(Player|string $player, string $permission, ?callable $callback = null)
+    {
+        $user = $this->ranks->getSessionManager()->get($player);
+       $user->onInitialize(function() use ($user, $permission){
+          return $user->removePermission($permission);
+       });
     }
 }
