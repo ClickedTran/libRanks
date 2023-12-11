@@ -43,6 +43,21 @@ RankProvider::removeRank(Player $player, string $rank, ?callable $callback = nul
 RankProvider::getRankData(string $rank, ?callable $callback = null)
 ```
 
+## Get Player's Permission
+```php
+RankProvider::getPlayerPermission(Player|string $player, ?callable $callback = null)
+```
+
+## Set Permission For Player
+```php
+RankProvider::setPlayerPermission(Player|string $player, string $permission, ?callable $callback = null)
+```
+
+## Remove Permission From Player
+```php
+RankProvider::unsetPlayerPermission(Player|string $player, string $permission, ?callable $callback = null)
+```
+
 ### Error Handling
 
 There are several exceptions that can be thrown that you may want to handle in your plugin:
