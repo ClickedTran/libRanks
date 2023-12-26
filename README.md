@@ -96,6 +96,8 @@ projects:
    - src: ClickedTran/libRanks/libRanks
      version: ^1.0.0
 ```
+## Plugins used:
+- [x] [RankShopGUI](https://poggit.pmmp.io/ci/ClickedTran/RankShopGUI/~)
 
 ## NOTE
 - If you find this lib similar to a certain lib, then you are right, I made this lib based on <a href="https://github.com/DaPigGuy/libPiggyEconomy">DaPigGuy's libPiggyEconomy</a>
