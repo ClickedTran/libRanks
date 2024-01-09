@@ -43,17 +43,17 @@ RankProvider::removeRank(Player|string $player, string $rank, ?callable $callbac
 RankProvider::getRankData(string $rank, ?callable $callback = null)
 ```
 
-## Get Player's Permission
+### Get Player's Permission
 ```php
 RankProvider::getPlayerPermission(Player|string $player, ?callable $callback = null)
 ```
 
-## Set Permission For Player
+### Set Permission For Player
 ```php
 RankProvider::setPlayerPermission(Player|string $player, string $permission, ?callable $callback = null)
 ```
 
-## Remove Permission From Player
+### Remove Permission From Player
 ```php
 RankProvider::unsetPlayerPermission(Player|string $player, string $permission, ?callable $callback = null)
 ```
