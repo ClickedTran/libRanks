@@ -1,6 +1,8 @@
 # libRanks
 
 libRanks is a virion for easy support of multiple rank providers.
+<br>
+Take a look at <a href="https://github.com/ClickedTran/libRanks/wiki">the wiki</a> to learn more about how virions work.
 
 ## Supported Providers
 
