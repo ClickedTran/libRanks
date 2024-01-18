@@ -104,3 +104,28 @@ projects:
 ## NOTE
 - If you find this lib similar to a certain lib, then you are right, I made this lib based on <a href="https://github.com/DaPigGuy/libPiggyEconomy">DaPigGuy's libPiggyEconomy</a>
 - Thank for you reading note
+***
+
+<div align="center">
+<h2>CONTACT</h2>
+<table width="30px" height="auto">
+<tr>
+<td><b>FACEBOOK</b></td>
+<td><b>DISCORD</b></td>
+</tr>
+<tr>
+<td>
+<div align="center">
+<a href="https://www.facebook.com/clicked.tran.01"><img src="https://i.ibb.co/JqVvkhk/facebook.png" width="40px" height="auto"></a>
+</div>
+</td>
+<td>
+<div align="center">
+<a href="https://discord.com/invite/9XbBgyen"><img src="https://i.ibb.co/rm13YL6/discord.png" alt="discord" border="0" width="50px" height="auto"></a>
+</div>
+</td>
+</tr>
+</table>
+
+***
+</div>
